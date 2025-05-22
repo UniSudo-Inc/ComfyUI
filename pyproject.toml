@@ -47,6 +47,14 @@ hunyuan3dwrapper = [
     "pygltflib",
     "scikit-learn",
     "pybind11",
+    "custom-rasterizer==0.1.0+torch260.cuda126"
+    # "utils3d",
+    # "nvdiffrast",
+    # #for quad remeshing node
+    # "pynanoinstantmeshes",
+    # #for fast decimation node
+    # "pyfqmr",
+    # "diso",
 ]
 
 # ---------- TORCH ----------
@@ -96,8 +104,17 @@ conflicts = [
     { extra = "rocm" },
     { extra = "xpus" },
   ],
+  [
+    { extra = "hunyuan3dwrapper" },
+    { extra = "cpu" },
+    { extra = "cu124"},
+    { extra = "cu118" },
+    { extra = "rocm" },
+    { extra = "xpus" },
+  ]
 ]
 
+find-links = ["./custom_nodes/ComfyUI-Hunyuan3DWrapper/wheels/"]
 
 [project.urls]
 homepage = "https://www.comfy.org/"
@@ -115,9 +132,7 @@ lint.select = [
   "F",
 ]
 exclude = ["*.ipynb"]
-
-
-[tool.uv.sources]
+# ---------- TORCH ----------
 torch = [
   { index = "pytorch-cu126", extra = "cu126" },
   { index = "pytorch-cu124", extra = "cu124" },
