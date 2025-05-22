@@ -30,6 +30,11 @@ dependencies = [
     "accelerate>=1.1.1",
     "diffusers>=0.31.0",
     "scikit-image",
+    "torchtyping",
+    "numba",
+    "colour-science",
+    "rembg",
+    "transparent-background",
 ]
 
 [project.optional-dependencies]
@@ -47,7 +52,7 @@ hunyuan3dwrapper = [
     "pygltflib",
     "scikit-learn",
     "pybind11",
-    "custom-rasterizer==0.1.0+torch260.cuda126"
+    "custom-rasterizer==0.1.0+torch260.cuda126",
     # "utils3d",
     # "nvdiffrast",
     # #for quad remeshing node
@@ -55,6 +60,33 @@ hunyuan3dwrapper = [
     # #for fast decimation node
     # "pyfqmr",
     # "diso",
+    # # ---------- hy3dgen shapegen bpt ----------
+    "meshgpt_pytorch",
+    "pytorch-custom-utils",
+    "beartype",
+    "classifier-free-guidance-pytorch",
+    "ema-pytorch",
+    "pytorch-warmup",
+    "torch_geometric",
+    "vector-quantize-pytorch",
+    "x-transformers",
+    "matplotlib",
+    "wandb",
+    "pyrr",
+    "trimesh",
+    "opencv-python",
+    "pyrender",
+    "open3d-python",
+    "easydict",
+    "chardet",
+    "omegaconf",
+    "scikit-image",
+    "pytorch_lightning",
+    "mesh2sdf",
+    "point-cloud-utils",
+    "networkx",
+    # "deepspeed", # only for *nix
+
 ]
 
 # ---------- TORCH ----------
@@ -95,6 +127,8 @@ xpus = [
 ]
 
 [tool.uv]
+# Resolve for macOS, but not for Linux or Windows.
+# environments = ["sys_platform == 'win32'"]
 conflicts = [
   [
     { extra = "cpu" },
@@ -132,6 +166,8 @@ lint.select = [
   "F",
 ]
 exclude = ["*.ipynb"]
+
+[tool.uv.sources]
 # ---------- TORCH ----------
 torch = [
   { index = "pytorch-cu126", extra = "cu126" },
