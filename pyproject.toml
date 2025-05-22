@@ -29,6 +29,7 @@ dependencies = [
     "opencv-python",
     "accelerate>=1.1.1",
     "diffusers>=0.31.0",
+    "scikit-image",
 ]
 
 [project.optional-dependencies]
@@ -38,7 +39,14 @@ mvadapter = [
     "omegaconf", 
     "trimesh", 
     "timm", 
-    "scikit-image"
+]
+
+hunyuan3dwrapper = [
+    "xatlas",
+    "pymeshlab",
+    "pygltflib",
+    "scikit-learn",
+    "pybind11",
 ]
 
 # ---------- TORCH ----------

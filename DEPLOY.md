@@ -1,3 +1,3 @@
-us sync --extra cu126\
---extra deps1\
---extra deps2 ...
+uv sync --extra cu126\
+ --extra mvadapter\
+ --extra hunyuan3dwrapper
