@@ -1,1 +1,3 @@
-us sync --extra cu126
+us sync --extra cu126\
+--extra deps1\
+--extra deps2 ...

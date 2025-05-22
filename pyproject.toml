@@ -25,9 +25,23 @@ dependencies = [
     "spandrel",
     "soundfile",
     "av",
+    # common custom node deps
+    "opencv-python",
+    "accelerate>=1.1.1",
+    "diffusers>=0.31.0",
 ]
 
 [project.optional-dependencies]
+# ---------- custom node deps ----------
+mvadapter = [
+    "peft",
+    "omegaconf", 
+    "trimesh", 
+    "timm", 
+    "scikit-image"
+]
+
+# ---------- TORCH ----------
 cpu = [
   "torch",
   "torchvision",
